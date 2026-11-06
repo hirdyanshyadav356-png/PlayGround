@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0c11" />
+  <title>Breath of the Last Sun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="game" aria-label="3D demon slayer game">
+    <canvas id="scene"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Breath of the Last Sun home"><span class="mark">陽</span><span>EMBER<span class="wordmark-light">FALL</span></span></a>
+      <div class="chapter"><span class="chapter-line"></span><span id="chapter-label">PROLOGUE · THE MOONLIT PASS</span></div>
+      <button class="sound-button" id="sound-button" aria-label="Toggle sound"><span id="sound-icon">♪</span><span id="sound-label">SOUND ON</span></button>
+    </header>
+    <section class="hud" id="hud" aria-live="polite">
+      <div class="hero-panel">
+        <div class="portrait"><span>陽</span><i></i></div>
+        <div class="hero-stats"><div class="hero-name">THE LAST SUN<span class="rank">HASHIRA · LV. 09</span></div><div class="meter-label"><span>VITALITY</span><span id="health-value">100 / 100</span></div><div class="meter"><div class="meter-fill health-fill" id="health-fill"></div></div><div class="meter-label breath-label"><span>BREATHING</span><span id="breath-value">100%</span></div><div class="meter breath-meter"><div class="meter-fill breath-fill" id="breath-fill"></div></div></div>
+      </div>
+      <div class="enemy-panel" id="enemy-panel"><div class="enemy-title"><span class="enemy-dot"></span><span id="enemy-name">THE HOLLOW</span><span class="enemy-kind" id="enemy-kind">LESSER DEMON</span></div><div class="enemy-meter"><div class="enemy-fill" id="enemy-fill"></div></div></div>
+    </section>
+    <div class="location"><span class="location-pin">✦</span><span id="location-text">MOUNT KAGURA · 01:17 AM</span></div>
+    <div class="objective" id="objective"><span class="objective-kicker">YOUR OBJECTIVE</span><span id="objective-text">Purge the lesser demon</span><span class="objective-sub" id="objective-sub">A presence stirs beyond the trees…</span></div>
+    <div class="combat-flash" id="combat-flash"></div>
+    <div class="impact-text" id="impact-text"></div>
+    <div class="cutscene" id="cutscene">
+      <div class="cutscene-kicker" id="cutscene-kicker">A DEMON SLAYER ORIGINAL</div>
+      <h1 id="cutscene-title">WHEN THE<br><em>MOON TURNS RED</em></h1>
+      <p id="cutscene-copy">One last night. One last breath. The mountain is hungry.</p>
+      <button class="primary-button" id="start-button"><span>DRAW YOUR BLADE</span><b>↗</b></button>
+      <div class="intro-foot"><span>CHAPTER 01</span><span>・</span><span>THE MOONLIT PASS</span></div>
+    </div>
+    <div class="dialogue" id="dialogue"><div class="dialogue-rule"></div><div class="dialogue-name" id="dialogue-name">THE SLAYER</div><div class="dialogue-copy" id="dialogue-copy"></div><div class="dialogue-prompt">CONTINUE <span>↵</span></div></div>
+    <div class="result-screen hidden" id="result-screen"><div class="result-seal">陽</div><div class="result-kicker">THE NIGHT IS OVER</div><h2>DAWN<br><em>REMEMBERS.</em></h2><p>The mountain is quiet again. For tonight.</p><button class="primary-button" id="replay-button"><span>FIGHT AGAIN</span><b>↗</b></button></div>
+    <div class="controls-hint" id="controls-hint"><span>WASD</span> MOVE <i></i><span>J</span> SLASH <i></i><span>K</span> WATER FORM <i></i><span>SPACE</span> DODGE</div>
+    <div class="mobile-controls" id="mobile-controls"><div class="dpad"><button data-move="up">▲</button><div><button data-move="left">◀</button><button data-move="down">▼</button><button data-move="right">▶</button></div></div><div class="action-pad"><button class="form-touch" data-action="form">FORM</button><button class="slash-touch" data-action="slash">SLASH</button><button class="dodge-touch" data-action="dodge">DODGE</button></div></div>
+    <div class="toast" id="toast">A demon is near.</div>
+    <div class="loading" id="loading"><div class="loader-mark">陽</div><span>SUMMONING THE NIGHT</span></div>
+  </div>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
